@@ -15,8 +15,8 @@
         <!--mybatis的相关包、mysql的相关包、spring的相关包（junit和spring整合进行测试）:相关包已经移动至dd-manager-->
         <!--pojo的相关包-->
         <dependency>
-            <groupId>com.xsj.ddshop</groupId>
-            <artifactId>dd-manager-pojo</artifactId>
+            <groupId>com.jdshop</groupId>
+            <artifactId>jd-manager-pojo</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

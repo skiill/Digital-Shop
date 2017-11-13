@@ -1,10 +1,9 @@
 package com.jdshop.dao;
 
-import com.xsj.ddshop.pojo.po.TbUser;
-import com.xsj.ddshop.pojo.po.TbUserExample;
-import org.apache.ibatis.annotations.Param;
-
+import com.jdshop.pojo.po.TbUser;
+import com.jdshop.pojo.po.TbUserExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TbUserMapper {
     int countByExample(TbUserExample example);

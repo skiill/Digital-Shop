@@ -1,11 +1,9 @@
 package com.jdshop.dao;
 
-
-import com.xsj.ddshop.pojo.po.TbContentCategory;
-import com.xsj.ddshop.pojo.po.TbContentCategoryExample;
-import org.apache.ibatis.annotations.Param;
-
+import com.jdshop.pojo.po.TbContentCategory;
+import com.jdshop.pojo.po.TbContentCategoryExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface TbContentCategoryMapper {
     int countByExample(TbContentCategoryExample example);

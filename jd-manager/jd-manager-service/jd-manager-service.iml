@@ -18,19 +18,12 @@
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="jd-manager-dao" />
-    <orderEntry type="library" name="Maven: com.xsj.ddshop:dd-manager-pojo:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.xsj.ddshop:dd-common:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.2.2" level="project" />
-    <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-jms:4.2.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-messaging:4.2.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-context-support:4.2.8.RELEASE" level="project" />
+    <orderEntry type="module" module-name="jd-manager-pojo" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.3.1" level="project" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.40" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.29" level="project" />
     <orderEntry type="module" module-name="jd-manager-interface" />
-    <orderEntry type="module" module-name="jd-manager-pojo" />
     <orderEntry type="module" module-name="jd-common" />
     <orderEntry type="library" name="Maven: redis.clients:jedis:2.7.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.3" level="project" />

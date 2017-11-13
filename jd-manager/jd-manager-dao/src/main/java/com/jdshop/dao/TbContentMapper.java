@@ -1,7 +1,7 @@
 package com.jdshop.dao;
 
-import com.xsj.ddshop.pojo.po.TbContent;
-import com.xsj.ddshop.pojo.po.TbContentExample;
+import com.jdshop.pojo.po.TbContent;
+import com.jdshop.pojo.po.TbContentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
