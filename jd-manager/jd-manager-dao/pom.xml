@@ -11,5 +11,47 @@
     <packaging>jar</packaging>
     <artifactId>jd-manager-dao</artifactId>
 
+    <dependencies>
+        <!--mybatis的相关包、mysql的相关包、spring的相关包（junit和spring整合进行测试）:相关包已经移动至dd-manager-->
+        <!--pojo的相关包-->
+        <dependency>
+            <groupId>com.xsj.ddshop</groupId>
+            <artifactId>dd-manager-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+        </dependency>
+
+        <!-- mysql -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+
+        </dependency>
+        <!-- 连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+    </build>
 </project>
