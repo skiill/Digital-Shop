@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jd-common/jd-common.iml" filepath="$PROJECT_DIR$/jd-common/jd-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-dao/jd-manager-dao.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-dao/jd-manager-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-interface/jd-manager-interface.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-interface/jd-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-pojo/jd-manager-pojo.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-pojo/jd-manager-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-service/jd-manager-service.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-service/jd-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-web/jd-manager-web.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-web/jd-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-parent/jd-parent.iml" filepath="$PROJECT_DIR$/jd-parent/jd-parent.iml" />
+    </modules>
+  </component>
+</project>
