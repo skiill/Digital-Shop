@@ -10,6 +10,7 @@
     <modules>
         <module>../jd-common</module>
         <module>../jd-manager</module>
+        <module>../jd-portal-web</module>
     </modules>
     <packaging>pom</packaging>
     <!--框架的版本属性-->

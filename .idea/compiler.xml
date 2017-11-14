@@ -12,6 +12,7 @@
         <module name="jd-manager-pojo" />
         <module name="jd-manager-service" />
         <module name="jd-manager-web" />
+        <module name="jd-portal-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +24,7 @@
       <module name="jd-manager-service" target="1.7" />
       <module name="jd-manager-web" target="1.7" />
       <module name="jd-parent" target="1.7" />
+      <module name="jd-portal-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-service/jd-manager-service.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-service/jd-manager-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-web/jd-manager-web.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-web/jd-manager-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/jd-parent/jd-parent.iml" filepath="$PROJECT_DIR$/jd-parent/jd-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-portal-web/jd-portal-web.iml" filepath="$PROJECT_DIR$/jd-portal-web/jd-portal-web.iml" />
     </modules>
   </component>
 </project>
