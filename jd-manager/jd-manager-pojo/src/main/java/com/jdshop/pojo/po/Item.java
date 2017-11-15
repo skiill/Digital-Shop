@@ -25,6 +25,8 @@ public class Item {
 
     private Date updated;
 
+    private Integer attention;
+
     public Long getId() {
         return id;
     }
@@ -111,5 +113,13 @@ public class Item {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public Integer getAttention() {
+        return attention;
+    }
+
+    public void setAttention(Integer attention) {
+        this.attention = attention;
     }
 }

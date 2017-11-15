@@ -14,8 +14,10 @@
     <result column="id_number" property="idNumber" jdbcType="VARCHAR" />
     <result column="pay_password" property="payPassword" jdbcType="VARCHAR" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.jdshop.pojo.po.User" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.jdshop.pojo.po.UserWithBLOBs" extends="BaseResultMap" >
     <result column="receiver_address" property="receiverAddress" jdbcType="LONGVARCHAR" />
+    <result column="shop_attention" property="shopAttention" jdbcType="LONGVARCHAR" />
+    <result column="item_attention" property="itemAttention" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -80,7 +82,7 @@
     pay_password
   </sql>
   <sql id="Blob_Column_List" >
-    receiver_address
+    receiver_address, shop_attention, item_attention
   </sql>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.jdshop.pojo.po.UserExample" >
     select
@@ -130,19 +132,19 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jdshop.pojo.po.User" >
+  <insert id="insert" parameterType="com.jdshop.pojo.po.UserWithBLOBs" >
     insert into user (id, username, password, 
       phone, email, created, 
       updated, status, realname, 
-      id_number, pay_password, receiver_address
-      )
+      id_number, pay_password, receiver_address, 
+      shop_attention, item_attention)
     values (#{id,jdbcType=BIGINT}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
       #{updated,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{realname,jdbcType=VARCHAR}, 
-      #{idNumber,jdbcType=VARCHAR}, #{payPassword,jdbcType=VARCHAR}, #{receiverAddress,jdbcType=LONGVARCHAR}
-      )
+      #{idNumber,jdbcType=VARCHAR}, #{payPassword,jdbcType=VARCHAR}, #{receiverAddress,jdbcType=LONGVARCHAR}, 
+      #{shopAttention,jdbcType=LONGVARCHAR}, #{itemAttention,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jdshop.pojo.po.User" >
+  <insert id="insertSelective" parameterType="com.jdshop.pojo.po.UserWithBLOBs" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -181,6 +183,12 @@
       <if test="receiverAddress != null" >
         receiver_address,
       </if>
+      <if test="shopAttention != null" >
+        shop_attention,
+      </if>
+      <if test="itemAttention != null" >
+        item_attention,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -218,6 +226,12 @@
       </if>
       <if test="receiverAddress != null" >
         #{receiverAddress,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="shopAttention != null" >
+        #{shopAttention,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="itemAttention != null" >
+        #{itemAttention,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -266,6 +280,12 @@
       <if test="record.receiverAddress != null" >
         receiver_address = #{record.receiverAddress,jdbcType=LONGVARCHAR},
       </if>
+      <if test="record.shopAttention != null" >
+        shop_attention = #{record.shopAttention,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.itemAttention != null" >
+        item_attention = #{record.itemAttention,jdbcType=LONGVARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -284,7 +304,9 @@
       realname = #{record.realname,jdbcType=VARCHAR},
       id_number = #{record.idNumber,jdbcType=VARCHAR},
       pay_password = #{record.payPassword,jdbcType=VARCHAR},
-      receiver_address = #{record.receiverAddress,jdbcType=LONGVARCHAR}
+      receiver_address = #{record.receiverAddress,jdbcType=LONGVARCHAR},
+      shop_attention = #{record.shopAttention,jdbcType=LONGVARCHAR},
+      item_attention = #{record.itemAttention,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -306,7 +328,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jdshop.pojo.po.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.jdshop.pojo.po.UserWithBLOBs" >
     update user
     <set >
       <if test="username != null" >
@@ -342,10 +364,16 @@
       <if test="receiverAddress != null" >
         receiver_address = #{receiverAddress,jdbcType=LONGVARCHAR},
       </if>
+      <if test="shopAttention != null" >
+        shop_attention = #{shopAttention,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="itemAttention != null" >
+        item_attention = #{itemAttention,jdbcType=LONGVARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jdshop.pojo.po.User" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jdshop.pojo.po.UserWithBLOBs" >
     update user
     set username = #{username,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
@@ -357,7 +385,9 @@
       realname = #{realname,jdbcType=VARCHAR},
       id_number = #{idNumber,jdbcType=VARCHAR},
       pay_password = #{payPassword,jdbcType=VARCHAR},
-      receiver_address = #{receiverAddress,jdbcType=LONGVARCHAR}
+      receiver_address = #{receiverAddress,jdbcType=LONGVARCHAR},
+      shop_attention = #{shopAttention,jdbcType=LONGVARCHAR},
+      item_attention = #{itemAttention,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.jdshop.pojo.po.User" >

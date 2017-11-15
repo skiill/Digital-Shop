@@ -25,8 +25,6 @@ public class User {
 
     private String payPassword;
 
-    private String receiverAddress;
-
     public Long getId() {
         return id;
     }
@@ -113,13 +111,5 @@ public class User {
 
     public void setPayPassword(String payPassword) {
         this.payPassword = payPassword == null ? null : payPassword.trim();
-    }
-
-    public String getReceiverAddress() {
-        return receiverAddress;
-    }
-
-    public void setReceiverAddress(String receiverAddress) {
-        this.receiverAddress = receiverAddress == null ? null : receiverAddress.trim();
     }
 }

@@ -9,7 +9,7 @@
     <result column="attention" property="attention" jdbcType="INTEGER" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.jdshop.pojo.po.Shop" extends="BaseResultMap" >
-    <result column="Item_id" property="itemId" jdbcType="LONGVARCHAR" />
+    <result column="item_id" property="itemId" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -73,7 +73,7 @@
     id, shopname, user_id, grade, attention
   </sql>
   <sql id="Blob_Column_List" >
-    Item_id
+    item_id
   </sql>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.jdshop.pojo.po.ShopExample" >
     select
@@ -125,7 +125,7 @@
   </delete>
   <insert id="insert" parameterType="com.jdshop.pojo.po.Shop" >
     insert into shop (id, shopname, user_id, 
-      grade, attention, Item_id
+      grade, attention, item_id
       )
     values (#{id,jdbcType=BIGINT}, #{shopname,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
       #{grade,jdbcType=INTEGER}, #{attention,jdbcType=INTEGER}, #{itemId,jdbcType=LONGVARCHAR}
@@ -150,7 +150,7 @@
         attention,
       </if>
       <if test="itemId != null" >
-        Item_id,
+        item_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -199,7 +199,7 @@
         attention = #{record.attention,jdbcType=INTEGER},
       </if>
       <if test="record.itemId != null" >
-        Item_id = #{record.itemId,jdbcType=LONGVARCHAR},
+        item_id = #{record.itemId,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -213,7 +213,7 @@
       user_id = #{record.userId,jdbcType=BIGINT},
       grade = #{record.grade,jdbcType=INTEGER},
       attention = #{record.attention,jdbcType=INTEGER},
-      Item_id = #{record.itemId,jdbcType=LONGVARCHAR}
+      item_id = #{record.itemId,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -245,7 +245,7 @@
         attention = #{attention,jdbcType=INTEGER},
       </if>
       <if test="itemId != null" >
-        Item_id = #{itemId,jdbcType=LONGVARCHAR},
+        item_id = #{itemId,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -256,7 +256,7 @@
       user_id = #{userId,jdbcType=BIGINT},
       grade = #{grade,jdbcType=INTEGER},
       attention = #{attention,jdbcType=INTEGER},
-      Item_id = #{itemId,jdbcType=LONGVARCHAR}
+      item_id = #{itemId,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.jdshop.pojo.po.Shop" >

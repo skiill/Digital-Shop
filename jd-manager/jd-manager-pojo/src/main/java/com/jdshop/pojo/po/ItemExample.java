@@ -804,6 +804,66 @@ public class ItemExample {
             addCriterion("updated not between", value1, value2, "updated");
             return (Criteria) this;
         }
+
+        public Criteria andAttentionIsNull() {
+            addCriterion("attention is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionIsNotNull() {
+            addCriterion("attention is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionEqualTo(Integer value) {
+            addCriterion("attention =", value, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionNotEqualTo(Integer value) {
+            addCriterion("attention <>", value, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionGreaterThan(Integer value) {
+            addCriterion("attention >", value, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionGreaterThanOrEqualTo(Integer value) {
+            addCriterion("attention >=", value, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionLessThan(Integer value) {
+            addCriterion("attention <", value, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionLessThanOrEqualTo(Integer value) {
+            addCriterion("attention <=", value, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionIn(List<Integer> values) {
+            addCriterion("attention in", values, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionNotIn(List<Integer> values) {
+            addCriterion("attention not in", values, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionBetween(Integer value1, Integer value2) {
+            addCriterion("attention between", value1, value2, "attention");
+            return (Criteria) this;
+        }
+
+        public Criteria andAttentionNotBetween(Integer value1, Integer value2) {
+            addCriterion("attention not between", value1, value2, "attention");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
