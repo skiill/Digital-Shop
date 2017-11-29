@@ -4,11 +4,16 @@
   <resultMap id="BaseResultMap" type="com.jdshop.pojo.po.Shop" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="shopname" property="shopname" jdbcType="VARCHAR" />
+    <result column="cid" property="cid" jdbcType="BIGINT" />
+    <result column="shop_logo" property="shopLogo" jdbcType="VARCHAR" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
-    <result column="grade" property="grade" jdbcType="INTEGER" />
+    <result column="credit" property="credit" jdbcType="INTEGER" />
     <result column="attention" property="attention" jdbcType="INTEGER" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.jdshop.pojo.po.Shop" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.jdshop.pojo.po.ShopWithBLOBs" extends="BaseResultMap" >
+    <result column="shop_desc" property="shopDesc" jdbcType="LONGVARCHAR" />
     <result column="item_id" property="itemId" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -70,10 +75,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, shopname, user_id, grade, attention
+    id, shopname, cid, shop_logo, user_id, credit, attention, created, updated
   </sql>
   <sql id="Blob_Column_List" >
-    item_id
+    shop_desc, item_id
   </sql>
   <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.jdshop.pojo.po.ShopExample" >
     select
@@ -123,15 +128,17 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.jdshop.pojo.po.Shop" >
-    insert into shop (id, shopname, user_id, 
-      grade, attention, item_id
-      )
-    values (#{id,jdbcType=BIGINT}, #{shopname,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
-      #{grade,jdbcType=INTEGER}, #{attention,jdbcType=INTEGER}, #{itemId,jdbcType=LONGVARCHAR}
-      )
+  <insert id="insert" parameterType="com.jdshop.pojo.po.ShopWithBLOBs" >
+    insert into shop (id, shopname, cid, 
+      shop_logo, user_id, credit, 
+      attention, created, updated, 
+      shop_desc, item_id)
+    values (#{id,jdbcType=BIGINT}, #{shopname,jdbcType=VARCHAR}, #{cid,jdbcType=BIGINT}, 
+      #{shopLogo,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, #{credit,jdbcType=INTEGER}, 
+      #{attention,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, 
+      #{shopDesc,jdbcType=LONGVARCHAR}, #{itemId,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.jdshop.pojo.po.Shop" >
+  <insert id="insertSelective" parameterType="com.jdshop.pojo.po.ShopWithBLOBs" >
     insert into shop
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -140,14 +147,29 @@
       <if test="shopname != null" >
         shopname,
       </if>
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="shopLogo != null" >
+        shop_logo,
+      </if>
       <if test="userId != null" >
         user_id,
       </if>
-      <if test="grade != null" >
-        grade,
+      <if test="credit != null" >
+        credit,
       </if>
       <if test="attention != null" >
         attention,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="updated != null" >
+        updated,
+      </if>
+      <if test="shopDesc != null" >
+        shop_desc,
       </if>
       <if test="itemId != null" >
         item_id,
@@ -160,14 +182,29 @@
       <if test="shopname != null" >
         #{shopname,jdbcType=VARCHAR},
       </if>
+      <if test="cid != null" >
+        #{cid,jdbcType=BIGINT},
+      </if>
+      <if test="shopLogo != null" >
+        #{shopLogo,jdbcType=VARCHAR},
+      </if>
       <if test="userId != null" >
         #{userId,jdbcType=BIGINT},
       </if>
-      <if test="grade != null" >
-        #{grade,jdbcType=INTEGER},
+      <if test="credit != null" >
+        #{credit,jdbcType=INTEGER},
       </if>
       <if test="attention != null" >
         #{attention,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shopDesc != null" >
+        #{shopDesc,jdbcType=LONGVARCHAR},
       </if>
       <if test="itemId != null" >
         #{itemId,jdbcType=LONGVARCHAR},
@@ -189,14 +226,29 @@
       <if test="record.shopname != null" >
         shopname = #{record.shopname,jdbcType=VARCHAR},
       </if>
+      <if test="record.cid != null" >
+        cid = #{record.cid,jdbcType=BIGINT},
+      </if>
+      <if test="record.shopLogo != null" >
+        shop_logo = #{record.shopLogo,jdbcType=VARCHAR},
+      </if>
       <if test="record.userId != null" >
         user_id = #{record.userId,jdbcType=BIGINT},
       </if>
-      <if test="record.grade != null" >
-        grade = #{record.grade,jdbcType=INTEGER},
+      <if test="record.credit != null" >
+        credit = #{record.credit,jdbcType=INTEGER},
       </if>
       <if test="record.attention != null" >
         attention = #{record.attention,jdbcType=INTEGER},
+      </if>
+      <if test="record.created != null" >
+        created = #{record.created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated != null" >
+        updated = #{record.updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.shopDesc != null" >
+        shop_desc = #{record.shopDesc,jdbcType=LONGVARCHAR},
       </if>
       <if test="record.itemId != null" >
         item_id = #{record.itemId,jdbcType=LONGVARCHAR},
@@ -210,9 +262,14 @@
     update shop
     set id = #{record.id,jdbcType=BIGINT},
       shopname = #{record.shopname,jdbcType=VARCHAR},
+      cid = #{record.cid,jdbcType=BIGINT},
+      shop_logo = #{record.shopLogo,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=BIGINT},
-      grade = #{record.grade,jdbcType=INTEGER},
+      credit = #{record.credit,jdbcType=INTEGER},
       attention = #{record.attention,jdbcType=INTEGER},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP},
+      shop_desc = #{record.shopDesc,jdbcType=LONGVARCHAR},
       item_id = #{record.itemId,jdbcType=LONGVARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -222,27 +279,46 @@
     update shop
     set id = #{record.id,jdbcType=BIGINT},
       shopname = #{record.shopname,jdbcType=VARCHAR},
+      cid = #{record.cid,jdbcType=BIGINT},
+      shop_logo = #{record.shopLogo,jdbcType=VARCHAR},
       user_id = #{record.userId,jdbcType=BIGINT},
-      grade = #{record.grade,jdbcType=INTEGER},
-      attention = #{record.attention,jdbcType=INTEGER}
+      credit = #{record.credit,jdbcType=INTEGER},
+      attention = #{record.attention,jdbcType=INTEGER},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.jdshop.pojo.po.Shop" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.jdshop.pojo.po.ShopWithBLOBs" >
     update shop
     <set >
       <if test="shopname != null" >
         shopname = #{shopname,jdbcType=VARCHAR},
       </if>
+      <if test="cid != null" >
+        cid = #{cid,jdbcType=BIGINT},
+      </if>
+      <if test="shopLogo != null" >
+        shop_logo = #{shopLogo,jdbcType=VARCHAR},
+      </if>
       <if test="userId != null" >
         user_id = #{userId,jdbcType=BIGINT},
       </if>
-      <if test="grade != null" >
-        grade = #{grade,jdbcType=INTEGER},
+      <if test="credit != null" >
+        credit = #{credit,jdbcType=INTEGER},
       </if>
       <if test="attention != null" >
         attention = #{attention,jdbcType=INTEGER},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shopDesc != null" >
+        shop_desc = #{shopDesc,jdbcType=LONGVARCHAR},
       </if>
       <if test="itemId != null" >
         item_id = #{itemId,jdbcType=LONGVARCHAR},
@@ -250,21 +326,30 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jdshop.pojo.po.Shop" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jdshop.pojo.po.ShopWithBLOBs" >
     update shop
     set shopname = #{shopname,jdbcType=VARCHAR},
+      cid = #{cid,jdbcType=BIGINT},
+      shop_logo = #{shopLogo,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=BIGINT},
-      grade = #{grade,jdbcType=INTEGER},
+      credit = #{credit,jdbcType=INTEGER},
       attention = #{attention,jdbcType=INTEGER},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP},
+      shop_desc = #{shopDesc,jdbcType=LONGVARCHAR},
       item_id = #{itemId,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.jdshop.pojo.po.Shop" >
     update shop
     set shopname = #{shopname,jdbcType=VARCHAR},
+      cid = #{cid,jdbcType=BIGINT},
+      shop_logo = #{shopLogo,jdbcType=VARCHAR},
       user_id = #{userId,jdbcType=BIGINT},
-      grade = #{grade,jdbcType=INTEGER},
-      attention = #{attention,jdbcType=INTEGER}
+      credit = #{credit,jdbcType=INTEGER},
+      attention = #{attention,jdbcType=INTEGER},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

@@ -2,6 +2,7 @@ package com.jdshop.dao;
 
 import com.jdshop.pojo.po.Shop;
 import com.jdshop.pojo.po.ShopExample;
+import com.jdshop.pojo.po.ShopWithBLOBs;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,25 +13,25 @@ public interface ShopMapper {
 
     int deleteByPrimaryKey(Long id);
 
-    int insert(Shop record);
+    int insert(ShopWithBLOBs record);
 
-    int insertSelective(Shop record);
+    int insertSelective(ShopWithBLOBs record);
 
-    List<Shop> selectByExampleWithBLOBs(ShopExample example);
+    List<ShopWithBLOBs> selectByExampleWithBLOBs(ShopExample example);
 
     List<Shop> selectByExample(ShopExample example);
 
-    Shop selectByPrimaryKey(Long id);
+    ShopWithBLOBs selectByPrimaryKey(Long id);
 
-    int updateByExampleSelective(@Param("record") Shop record, @Param("example") ShopExample example);
+    int updateByExampleSelective(@Param("record") ShopWithBLOBs record, @Param("example") ShopExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") Shop record, @Param("example") ShopExample example);
+    int updateByExampleWithBLOBs(@Param("record") ShopWithBLOBs record, @Param("example") ShopExample example);
 
     int updateByExample(@Param("record") Shop record, @Param("example") ShopExample example);
 
-    int updateByPrimaryKeySelective(Shop record);
+    int updateByPrimaryKeySelective(ShopWithBLOBs record);
 
-    int updateByPrimaryKeyWithBLOBs(Shop record);
+    int updateByPrimaryKeyWithBLOBs(ShopWithBLOBs record);
 
     int updateByPrimaryKey(Shop record);
 }

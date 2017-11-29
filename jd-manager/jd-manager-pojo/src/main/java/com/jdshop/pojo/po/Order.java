@@ -3,7 +3,7 @@ package com.jdshop.pojo.po;
 import java.util.Date;
 
 public class Order {
-    private String orderId;
+    private Long orderId;
 
     private String payment;
 
@@ -31,18 +31,14 @@ public class Order {
 
     private Long userId;
 
-    private String buyerMessage;
+    private Long shopId;
 
-    private String buyerNick;
-
-    private Integer buyerRate;
-
-    public String getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId == null ? null : orderId.trim();
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     public String getPayment() {
@@ -149,27 +145,11 @@ public class Order {
         this.userId = userId;
     }
 
-    public String getBuyerMessage() {
-        return buyerMessage;
+    public Long getShopId() {
+        return shopId;
     }
 
-    public void setBuyerMessage(String buyerMessage) {
-        this.buyerMessage = buyerMessage == null ? null : buyerMessage.trim();
-    }
-
-    public String getBuyerNick() {
-        return buyerNick;
-    }
-
-    public void setBuyerNick(String buyerNick) {
-        this.buyerNick = buyerNick == null ? null : buyerNick.trim();
-    }
-
-    public Integer getBuyerRate() {
-        return buyerRate;
-    }
-
-    public void setBuyerRate(Integer buyerRate) {
-        this.buyerRate = buyerRate;
+    public void setShopId(Long shopId) {
+        this.shopId = shopId;
     }
 }

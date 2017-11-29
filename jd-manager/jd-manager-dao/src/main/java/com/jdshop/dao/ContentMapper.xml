@@ -9,7 +9,7 @@
     <result column="title_desc" property="titleDesc" jdbcType="VARCHAR" />
     <result column="url" property="url" jdbcType="VARCHAR" />
     <result column="pic" property="pic" jdbcType="VARCHAR" />
-    <result column="pic2" property="pic2" jdbcType="VARCHAR" />
+    <result column="pic_two" property="picTwo" jdbcType="VARCHAR" />
     <result column="created" property="created" jdbcType="TIMESTAMP" />
     <result column="updated" property="updated" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -75,7 +75,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, category_id, title, sub_title, title_desc, url, pic, pic2, created, updated
+    id, category_id, title, sub_title, title_desc, url, pic, pic_two, created, updated
   </sql>
   <sql id="Blob_Column_List" >
     content
@@ -131,11 +131,11 @@
   <insert id="insert" parameterType="com.jdshop.pojo.po.Content" >
     insert into content (id, category_id, title, 
       sub_title, title_desc, url, 
-      pic, pic2, created, 
+      pic, pic_two, created, 
       updated, content)
     values (#{id,jdbcType=BIGINT}, #{categoryId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
       #{subTitle,jdbcType=VARCHAR}, #{titleDesc,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
-      #{pic,jdbcType=VARCHAR}, #{pic2,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
+      #{pic,jdbcType=VARCHAR}, #{picTwo,jdbcType=VARCHAR}, #{created,jdbcType=TIMESTAMP}, 
       #{updated,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.jdshop.pojo.po.Content" >
@@ -162,8 +162,8 @@
       <if test="pic != null" >
         pic,
       </if>
-      <if test="pic2 != null" >
-        pic2,
+      <if test="picTwo != null" >
+        pic_two,
       </if>
       <if test="created != null" >
         created,
@@ -197,8 +197,8 @@
       <if test="pic != null" >
         #{pic,jdbcType=VARCHAR},
       </if>
-      <if test="pic2 != null" >
-        #{pic2,jdbcType=VARCHAR},
+      <if test="picTwo != null" >
+        #{picTwo,jdbcType=VARCHAR},
       </if>
       <if test="created != null" >
         #{created,jdbcType=TIMESTAMP},
@@ -241,8 +241,8 @@
       <if test="record.pic != null" >
         pic = #{record.pic,jdbcType=VARCHAR},
       </if>
-      <if test="record.pic2 != null" >
-        pic2 = #{record.pic2,jdbcType=VARCHAR},
+      <if test="record.picTwo != null" >
+        pic_two = #{record.picTwo,jdbcType=VARCHAR},
       </if>
       <if test="record.created != null" >
         created = #{record.created,jdbcType=TIMESTAMP},
@@ -267,7 +267,7 @@
       title_desc = #{record.titleDesc,jdbcType=VARCHAR},
       url = #{record.url,jdbcType=VARCHAR},
       pic = #{record.pic,jdbcType=VARCHAR},
-      pic2 = #{record.pic2,jdbcType=VARCHAR},
+      pic_two = #{record.picTwo,jdbcType=VARCHAR},
       created = #{record.created,jdbcType=TIMESTAMP},
       updated = #{record.updated,jdbcType=TIMESTAMP},
       content = #{record.content,jdbcType=LONGVARCHAR}
@@ -284,7 +284,7 @@
       title_desc = #{record.titleDesc,jdbcType=VARCHAR},
       url = #{record.url,jdbcType=VARCHAR},
       pic = #{record.pic,jdbcType=VARCHAR},
-      pic2 = #{record.pic2,jdbcType=VARCHAR},
+      pic_two = #{record.picTwo,jdbcType=VARCHAR},
       created = #{record.created,jdbcType=TIMESTAMP},
       updated = #{record.updated,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
@@ -312,8 +312,8 @@
       <if test="pic != null" >
         pic = #{pic,jdbcType=VARCHAR},
       </if>
-      <if test="pic2 != null" >
-        pic2 = #{pic2,jdbcType=VARCHAR},
+      <if test="picTwo != null" >
+        pic_two = #{picTwo,jdbcType=VARCHAR},
       </if>
       <if test="created != null" >
         created = #{created,jdbcType=TIMESTAMP},
@@ -335,7 +335,7 @@
       title_desc = #{titleDesc,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
-      pic2 = #{pic2,jdbcType=VARCHAR},
+      pic_two = #{picTwo,jdbcType=VARCHAR},
       created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP},
       content = #{content,jdbcType=LONGVARCHAR}
@@ -349,7 +349,7 @@
       title_desc = #{titleDesc,jdbcType=VARCHAR},
       url = #{url,jdbcType=VARCHAR},
       pic = #{pic,jdbcType=VARCHAR},
-      pic2 = #{pic2,jdbcType=VARCHAR},
+      pic_two = #{picTwo,jdbcType=VARCHAR},
       created = #{created,jdbcType=TIMESTAMP},
       updated = #{updated,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}

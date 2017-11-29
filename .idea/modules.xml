@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/jd-activemq/jd-activemq.iml" filepath="$PROJECT_DIR$/jd-activemq/jd-activemq.iml" />
       <module fileurl="file://$PROJECT_DIR$/jd-common/jd-common.iml" filepath="$PROJECT_DIR$/jd-common/jd-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager.iml" />
       <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-dao/jd-manager-dao.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-dao/jd-manager-dao.iml" />
@@ -11,6 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/jd-manager/jd-manager-web/jd-manager-web.iml" filepath="$PROJECT_DIR$/jd-manager/jd-manager-web/jd-manager-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/jd-parent/jd-parent.iml" filepath="$PROJECT_DIR$/jd-parent/jd-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/jd-portal-web/jd-portal-web.iml" filepath="$PROJECT_DIR$/jd-portal-web/jd-portal-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-search-web/jd-search-web.iml" filepath="$PROJECT_DIR$/jd-search-web/jd-search-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jd-sso-web/jd-sso-web.iml" filepath="$PROJECT_DIR$/jd-sso-web/jd-sso-web.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.ReplyMapper" >
+  <resultMap id="BaseResultMap" type="com.jdshop.pojo.po.Reply" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="parent_id" property="parentId" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="is_evaluate" property="isEvaluate" jdbcType="BIT" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="return_user_id" property="returnUserId" jdbcType="BIGINT" />
+    <result column="shipping_grade" property="shippingGrade" jdbcType="INTEGER" />
+    <result column="item_grade" property="itemGrade" jdbcType="INTEGER" />
+    <result column="shop_service_grade" property="shopServiceGrade" jdbcType="INTEGER" />
+    <result column="item_id" property="itemId" jdbcType="BIGINT" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.jdshop.pojo.po.Reply" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, parent_id, status, is_evaluate, pic, user_id, return_user_id, shipping_grade, 
+    item_grade, shop_service_grade, item_id, created, updated
+  </sql>
+  <sql id="Blob_Column_List" >
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.jdshop.pojo.po.ReplyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from reply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jdshop.pojo.po.ReplyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from reply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from reply
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from reply
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jdshop.pojo.po.ReplyExample" >
+    delete from reply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jdshop.pojo.po.Reply" >
+    insert into reply (id, parent_id, status, 
+      is_evaluate, pic, user_id, 
+      return_user_id, shipping_grade, item_grade, 
+      shop_service_grade, item_id, created, 
+      updated, content)
+    values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, 
+      #{isEvaluate,jdbcType=BIT}, #{pic,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
+      #{returnUserId,jdbcType=BIGINT}, #{shippingGrade,jdbcType=INTEGER}, #{itemGrade,jdbcType=INTEGER}, 
+      #{shopServiceGrade,jdbcType=INTEGER}, #{itemId,jdbcType=BIGINT}, #{created,jdbcType=TIMESTAMP}, 
+      #{updated,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jdshop.pojo.po.Reply" >
+    insert into reply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="isEvaluate != null" >
+        is_evaluate,
+      </if>
+      <if test="pic != null" >
+        pic,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="returnUserId != null" >
+        return_user_id,
+      </if>
+      <if test="shippingGrade != null" >
+        shipping_grade,
+      </if>
+      <if test="itemGrade != null" >
+        item_grade,
+      </if>
+      <if test="shopServiceGrade != null" >
+        shop_service_grade,
+      </if>
+      <if test="itemId != null" >
+        item_id,
+      </if>
+      <if test="created != null" >
+        created,
+      </if>
+      <if test="updated != null" >
+        updated,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isEvaluate != null" >
+        #{isEvaluate,jdbcType=BIT},
+      </if>
+      <if test="pic != null" >
+        #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="returnUserId != null" >
+        #{returnUserId,jdbcType=BIGINT},
+      </if>
+      <if test="shippingGrade != null" >
+        #{shippingGrade,jdbcType=INTEGER},
+      </if>
+      <if test="itemGrade != null" >
+        #{itemGrade,jdbcType=INTEGER},
+      </if>
+      <if test="shopServiceGrade != null" >
+        #{shopServiceGrade,jdbcType=INTEGER},
+      </if>
+      <if test="itemId != null" >
+        #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="created != null" >
+        #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jdshop.pojo.po.ReplyExample" resultType="java.lang.Integer" >
+    select count(*) from reply
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update reply
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.parentId != null" >
+        parent_id = #{record.parentId,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.isEvaluate != null" >
+        is_evaluate = #{record.isEvaluate,jdbcType=BIT},
+      </if>
+      <if test="record.pic != null" >
+        pic = #{record.pic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+      <if test="record.returnUserId != null" >
+        return_user_id = #{record.returnUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.shippingGrade != null" >
+        shipping_grade = #{record.shippingGrade,jdbcType=INTEGER},
+      </if>
+      <if test="record.itemGrade != null" >
+        item_grade = #{record.itemGrade,jdbcType=INTEGER},
+      </if>
+      <if test="record.shopServiceGrade != null" >
+        shop_service_grade = #{record.shopServiceGrade,jdbcType=INTEGER},
+      </if>
+      <if test="record.itemId != null" >
+        item_id = #{record.itemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.created != null" >
+        created = #{record.created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updated != null" >
+        updated = #{record.updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.content != null" >
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update reply
+    set id = #{record.id,jdbcType=BIGINT},
+      parent_id = #{record.parentId,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=INTEGER},
+      is_evaluate = #{record.isEvaluate,jdbcType=BIT},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      return_user_id = #{record.returnUserId,jdbcType=BIGINT},
+      shipping_grade = #{record.shippingGrade,jdbcType=INTEGER},
+      item_grade = #{record.itemGrade,jdbcType=INTEGER},
+      shop_service_grade = #{record.shopServiceGrade,jdbcType=INTEGER},
+      item_id = #{record.itemId,jdbcType=BIGINT},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP},
+      content = #{record.content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update reply
+    set id = #{record.id,jdbcType=BIGINT},
+      parent_id = #{record.parentId,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=INTEGER},
+      is_evaluate = #{record.isEvaluate,jdbcType=BIT},
+      pic = #{record.pic,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      return_user_id = #{record.returnUserId,jdbcType=BIGINT},
+      shipping_grade = #{record.shippingGrade,jdbcType=INTEGER},
+      item_grade = #{record.itemGrade,jdbcType=INTEGER},
+      shop_service_grade = #{record.shopServiceGrade,jdbcType=INTEGER},
+      item_id = #{record.itemId,jdbcType=BIGINT},
+      created = #{record.created,jdbcType=TIMESTAMP},
+      updated = #{record.updated,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jdshop.pojo.po.Reply" >
+    update reply
+    <set >
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="isEvaluate != null" >
+        is_evaluate = #{isEvaluate,jdbcType=BIT},
+      </if>
+      <if test="pic != null" >
+        pic = #{pic,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="returnUserId != null" >
+        return_user_id = #{returnUserId,jdbcType=BIGINT},
+      </if>
+      <if test="shippingGrade != null" >
+        shipping_grade = #{shippingGrade,jdbcType=INTEGER},
+      </if>
+      <if test="itemGrade != null" >
+        item_grade = #{itemGrade,jdbcType=INTEGER},
+      </if>
+      <if test="shopServiceGrade != null" >
+        shop_service_grade = #{shopServiceGrade,jdbcType=INTEGER},
+      </if>
+      <if test="itemId != null" >
+        item_id = #{itemId,jdbcType=BIGINT},
+      </if>
+      <if test="created != null" >
+        created = #{created,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updated != null" >
+        updated = #{updated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jdshop.pojo.po.Reply" >
+    update reply
+    set parent_id = #{parentId,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      is_evaluate = #{isEvaluate,jdbcType=BIT},
+      pic = #{pic,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      return_user_id = #{returnUserId,jdbcType=BIGINT},
+      shipping_grade = #{shippingGrade,jdbcType=INTEGER},
+      item_grade = #{itemGrade,jdbcType=INTEGER},
+      shop_service_grade = #{shopServiceGrade,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=BIGINT},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jdshop.pojo.po.Reply" >
+    update reply
+    set parent_id = #{parentId,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      is_evaluate = #{isEvaluate,jdbcType=BIT},
+      pic = #{pic,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      return_user_id = #{returnUserId,jdbcType=BIGINT},
+      shipping_grade = #{shippingGrade,jdbcType=INTEGER},
+      item_grade = #{itemGrade,jdbcType=INTEGER},
+      shop_service_grade = #{shopServiceGrade,jdbcType=INTEGER},
+      item_id = #{itemId,jdbcType=BIGINT},
+      created = #{created,jdbcType=TIMESTAMP},
+      updated = #{updated,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

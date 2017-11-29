@@ -3,6 +3,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/jd-manager/jd-manager-web" />
     <file type="web" url="file://$PROJECT_DIR$/jd-portal-web" />
+    <file type="web" url="file://$PROJECT_DIR$/jd-search-web" />
+    <file type="web" url="file://$PROJECT_DIR$/jd-sso-web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

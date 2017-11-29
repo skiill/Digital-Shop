@@ -3,11 +3,9 @@ package com.jdshop.pojo.po;
 import java.util.Date;
 
 public class OrderShipping {
-    private String orderId;
+    private Long orderId;
 
     private String receiverName;
-
-    private String receiverPhone;
 
     private String receiverMobile;
 
@@ -25,12 +23,12 @@ public class OrderShipping {
 
     private Date updated;
 
-    public String getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId == null ? null : orderId.trim();
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     public String getReceiverName() {
@@ -39,14 +37,6 @@ public class OrderShipping {
 
     public void setReceiverName(String receiverName) {
         this.receiverName = receiverName == null ? null : receiverName.trim();
-    }
-
-    public String getReceiverPhone() {
-        return receiverPhone;
-    }
-
-    public void setReceiverPhone(String receiverPhone) {
-        this.receiverPhone = receiverPhone == null ? null : receiverPhone.trim();
     }
 
     public String getReceiverMobile() {

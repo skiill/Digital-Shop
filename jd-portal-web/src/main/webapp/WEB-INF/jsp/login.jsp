@@ -40,30 +40,8 @@
 <body>
 <!--banner start here-->
 <div class="banner-stripes">
-    <div class="banner-strip-lft">
-        <div class="container">
-            <div class="bann-head">
-                <a href="jumpTo?name=index"><img src="images/logo.png" alt=""/></a>
-                <ul  class="bann-list">
-                    <li><a href="jumpTo?name=store">STORE</a></li>
-                    <li><a href="jumpTo?name=magazine">MAGAZINE</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="banner-strip-rit">
-        <div class="bann-contact">
-            <div class="search">
-                <input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
-                <input type="submit" value=""/>
-            </div>
-            <ul>
-                <li><a href="jumpTo?name=signup">SIGN UP</a></li>
-                <li><a href="jumpTo?name=login">LOG IN</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="clearfix"> </div>
+
+        <jsp:include page="head.jsp"/>
 </div>
 <!--banner end here-->
 <!--login start here-->

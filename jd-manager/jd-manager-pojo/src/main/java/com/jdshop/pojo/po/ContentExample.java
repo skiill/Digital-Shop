@@ -575,73 +575,73 @@ public class ContentExample {
             return (Criteria) this;
         }
 
-        public Criteria andPic2IsNull() {
-            addCriterion("pic2 is null");
+        public Criteria andPicTwoIsNull() {
+            addCriterion("pic_two is null");
             return (Criteria) this;
         }
 
-        public Criteria andPic2IsNotNull() {
-            addCriterion("pic2 is not null");
+        public Criteria andPicTwoIsNotNull() {
+            addCriterion("pic_two is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPic2EqualTo(String value) {
-            addCriterion("pic2 =", value, "pic2");
+        public Criteria andPicTwoEqualTo(String value) {
+            addCriterion("pic_two =", value, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2NotEqualTo(String value) {
-            addCriterion("pic2 <>", value, "pic2");
+        public Criteria andPicTwoNotEqualTo(String value) {
+            addCriterion("pic_two <>", value, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2GreaterThan(String value) {
-            addCriterion("pic2 >", value, "pic2");
+        public Criteria andPicTwoGreaterThan(String value) {
+            addCriterion("pic_two >", value, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2GreaterThanOrEqualTo(String value) {
-            addCriterion("pic2 >=", value, "pic2");
+        public Criteria andPicTwoGreaterThanOrEqualTo(String value) {
+            addCriterion("pic_two >=", value, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2LessThan(String value) {
-            addCriterion("pic2 <", value, "pic2");
+        public Criteria andPicTwoLessThan(String value) {
+            addCriterion("pic_two <", value, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2LessThanOrEqualTo(String value) {
-            addCriterion("pic2 <=", value, "pic2");
+        public Criteria andPicTwoLessThanOrEqualTo(String value) {
+            addCriterion("pic_two <=", value, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2Like(String value) {
-            addCriterion("pic2 like", value, "pic2");
+        public Criteria andPicTwoLike(String value) {
+            addCriterion("pic_two like", value, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2NotLike(String value) {
-            addCriterion("pic2 not like", value, "pic2");
+        public Criteria andPicTwoNotLike(String value) {
+            addCriterion("pic_two not like", value, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2In(List<String> values) {
-            addCriterion("pic2 in", values, "pic2");
+        public Criteria andPicTwoIn(List<String> values) {
+            addCriterion("pic_two in", values, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2NotIn(List<String> values) {
-            addCriterion("pic2 not in", values, "pic2");
+        public Criteria andPicTwoNotIn(List<String> values) {
+            addCriterion("pic_two not in", values, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2Between(String value1, String value2) {
-            addCriterion("pic2 between", value1, value2, "pic2");
+        public Criteria andPicTwoBetween(String value1, String value2) {
+            addCriterion("pic_two between", value1, value2, "picTwo");
             return (Criteria) this;
         }
 
-        public Criteria andPic2NotBetween(String value1, String value2) {
-            addCriterion("pic2 not between", value1, value2, "pic2");
+        public Criteria andPicTwoNotBetween(String value1, String value2) {
+            addCriterion("pic_two not between", value1, value2, "picTwo");
             return (Criteria) this;
         }
 

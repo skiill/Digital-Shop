@@ -9,13 +9,11 @@ public class User {
 
     private String password;
 
+    private String headPic;
+
     private String phone;
 
     private String email;
-
-    private Date created;
-
-    private Date updated;
 
     private Integer status;
 
@@ -24,6 +22,12 @@ public class User {
     private String idNumber;
 
     private String payPassword;
+
+    private Integer credit;
+
+    private Date created;
+
+    private Date updated;
 
     public Long getId() {
         return id;
@@ -49,6 +53,14 @@ public class User {
         this.password = password == null ? null : password.trim();
     }
 
+    public String getHeadPic() {
+        return headPic;
+    }
+
+    public void setHeadPic(String headPic) {
+        this.headPic = headPic == null ? null : headPic.trim();
+    }
+
     public String getPhone() {
         return phone;
     }
@@ -63,22 +75,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
     }
 
     public Integer getStatus() {
@@ -111,5 +107,29 @@ public class User {
 
     public void setPayPassword(String payPassword) {
         this.payPassword = payPassword == null ? null : payPassword.trim();
+    }
+
+    public Integer getCredit() {
+        return credit;
+    }
+
+    public void setCredit(Integer credit) {
+        this.credit = credit;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }

@@ -17,7 +17,7 @@ public class Content {
 
     private String pic;
 
-    private String pic2;
+    private String picTwo;
 
     private Date created;
 
@@ -81,12 +81,12 @@ public class Content {
         this.pic = pic == null ? null : pic.trim();
     }
 
-    public String getPic2() {
-        return pic2;
+    public String getPicTwo() {
+        return picTwo;
     }
 
-    public void setPic2(String pic2) {
-        this.pic2 = pic2 == null ? null : pic2.trim();
+    public void setPicTwo(String picTwo) {
+        this.picTwo = picTwo == null ? null : picTwo.trim();
     }
 
     public Date getCreated() {

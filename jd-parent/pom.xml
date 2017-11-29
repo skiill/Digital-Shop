@@ -11,7 +11,13 @@
         <module>../jd-common</module>
         <module>../jd-manager</module>
         <module>../jd-portal-web</module>
+        <module>../jd-search-web</module>
+        <module>../jd-activemq</module>
+        <module>../jd-sso-web</module>
     </modules>
+    <dependencies>
+
+    </dependencies>
     <packaging>pom</packaging>
     <!--框架的版本属性-->
     <properties>
@@ -53,11 +59,11 @@
         <freemarker.version>2.3.23</freemarker.version>
         <quartz.version>2.2.2</quartz.version>
         <lucene.version>4.10.3</lucene.version>
-        <ik.version>2012FF_u1</ik.version>
     </properties>
 
     <!--依赖的声明-->
     <dependencyManagement>
+
         <dependencies>
             <!--jsp相关-->
             <dependency>
@@ -78,8 +84,24 @@
                 <artifactId>jstl</artifactId>
                 <version>${jstl.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-core</artifactId>
+                <version>${lucene.version}</version>
+            </dependency>
 
-            <!--富文本编辑器-->
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-queryparser</artifactId>
+                <version>${lucene.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.lucene</groupId>
+                <artifactId>lucene-analyzers-common</artifactId>
+                <version>${lucene.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
@@ -120,7 +142,7 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
             </dependency>
-
+            <!-- ueditor使用 -->
             <dependency>
                 <groupId>org.json</groupId>
                 <artifactId>json</artifactId>
@@ -180,13 +202,13 @@
                 <artifactId>mybatis-paginator</artifactId>
                 <version>${mybatis.paginator.version}</version>
             </dependency>
-            <!-- mysql驱动包 -->
+            <!-- mysql -->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
-            <!-- 阿里连接池 -->
+            <!-- 连接池 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
@@ -240,6 +262,17 @@
                 <version>${spring.version}</version>
                 <scope>test</scope>
             </dependency>
+            <!--消息服务中间件-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
 
             <!-- 文件上传组件 -->
             <dependency>
@@ -247,6 +280,7 @@
                 <artifactId>commons-fileupload</artifactId>
                 <version>${commons-fileupload.version}</version>
             </dependency>
+
 
             <!-- Redis客户端 -->
             <dependency>
@@ -261,27 +295,6 @@
                 <groupId>org.apache.solr</groupId>
                 <artifactId>solr-solrj</artifactId>
                 <version>${solrj.version}</version>
-            </dependency>
-            <!--Lucene相关jar-->
-            <dependency>
-                <groupId>org.apache.lucene</groupId>
-                <artifactId>lucene-core</artifactId>
-                <version>${lucene.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.lucene</groupId>
-                <artifactId>lucene-queryparser</artifactId>
-                <version>${lucene.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.lucene</groupId>
-                <artifactId>lucene-analyzers-common</artifactId>
-                <version>${lucene.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wltea.analyzer.lucene</groupId>
-                <artifactId>IKAnalyzer</artifactId>
-                <version>${ik.version}</version>
             </dependency>
 
             <!-- dubbo相关 -->
@@ -302,17 +315,6 @@
                 <version>${zkclient.version}</version>
             </dependency>
             <!-- 消息队列相关 -->
-            <!--消息服务中间件-->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-jms</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
             <dependency>
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>activemq-all</artifactId>

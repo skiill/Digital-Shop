@@ -115,62 +115,52 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdEqualTo(String value) {
+        public Criteria andOrderIdEqualTo(Long value) {
             addCriterion("order_id =", value, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdNotEqualTo(String value) {
+        public Criteria andOrderIdNotEqualTo(Long value) {
             addCriterion("order_id <>", value, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdGreaterThan(String value) {
+        public Criteria andOrderIdGreaterThan(Long value) {
             addCriterion("order_id >", value, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdGreaterThanOrEqualTo(String value) {
+        public Criteria andOrderIdGreaterThanOrEqualTo(Long value) {
             addCriterion("order_id >=", value, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdLessThan(String value) {
+        public Criteria andOrderIdLessThan(Long value) {
             addCriterion("order_id <", value, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdLessThanOrEqualTo(String value) {
+        public Criteria andOrderIdLessThanOrEqualTo(Long value) {
             addCriterion("order_id <=", value, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdLike(String value) {
-            addCriterion("order_id like", value, "orderId");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderIdNotLike(String value) {
-            addCriterion("order_id not like", value, "orderId");
-            return (Criteria) this;
-        }
-
-        public Criteria andOrderIdIn(List<String> values) {
+        public Criteria andOrderIdIn(List<Long> values) {
             addCriterion("order_id in", values, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdNotIn(List<String> values) {
+        public Criteria andOrderIdNotIn(List<Long> values) {
             addCriterion("order_id not in", values, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdBetween(String value1, String value2) {
+        public Criteria andOrderIdBetween(Long value1, Long value2) {
             addCriterion("order_id between", value1, value2, "orderId");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIdNotBetween(String value1, String value2) {
+        public Criteria andOrderIdNotBetween(Long value1, Long value2) {
             addCriterion("order_id not between", value1, value2, "orderId");
             return (Criteria) this;
         }
@@ -995,203 +985,63 @@ public class OrderExample {
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageIsNull() {
-            addCriterion("buyer_message is null");
+        public Criteria andShopIdIsNull() {
+            addCriterion("shop_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageIsNotNull() {
-            addCriterion("buyer_message is not null");
+        public Criteria andShopIdIsNotNull() {
+            addCriterion("shop_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageEqualTo(String value) {
-            addCriterion("buyer_message =", value, "buyerMessage");
+        public Criteria andShopIdEqualTo(Long value) {
+            addCriterion("shop_id =", value, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageNotEqualTo(String value) {
-            addCriterion("buyer_message <>", value, "buyerMessage");
+        public Criteria andShopIdNotEqualTo(Long value) {
+            addCriterion("shop_id <>", value, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageGreaterThan(String value) {
-            addCriterion("buyer_message >", value, "buyerMessage");
+        public Criteria andShopIdGreaterThan(Long value) {
+            addCriterion("shop_id >", value, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageGreaterThanOrEqualTo(String value) {
-            addCriterion("buyer_message >=", value, "buyerMessage");
+        public Criteria andShopIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("shop_id >=", value, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageLessThan(String value) {
-            addCriterion("buyer_message <", value, "buyerMessage");
+        public Criteria andShopIdLessThan(Long value) {
+            addCriterion("shop_id <", value, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageLessThanOrEqualTo(String value) {
-            addCriterion("buyer_message <=", value, "buyerMessage");
+        public Criteria andShopIdLessThanOrEqualTo(Long value) {
+            addCriterion("shop_id <=", value, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageLike(String value) {
-            addCriterion("buyer_message like", value, "buyerMessage");
+        public Criteria andShopIdIn(List<Long> values) {
+            addCriterion("shop_id in", values, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageNotLike(String value) {
-            addCriterion("buyer_message not like", value, "buyerMessage");
+        public Criteria andShopIdNotIn(List<Long> values) {
+            addCriterion("shop_id not in", values, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageIn(List<String> values) {
-            addCriterion("buyer_message in", values, "buyerMessage");
+        public Criteria andShopIdBetween(Long value1, Long value2) {
+            addCriterion("shop_id between", value1, value2, "shopId");
             return (Criteria) this;
         }
 
-        public Criteria andBuyerMessageNotIn(List<String> values) {
-            addCriterion("buyer_message not in", values, "buyerMessage");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerMessageBetween(String value1, String value2) {
-            addCriterion("buyer_message between", value1, value2, "buyerMessage");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerMessageNotBetween(String value1, String value2) {
-            addCriterion("buyer_message not between", value1, value2, "buyerMessage");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickIsNull() {
-            addCriterion("buyer_nick is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickIsNotNull() {
-            addCriterion("buyer_nick is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickEqualTo(String value) {
-            addCriterion("buyer_nick =", value, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickNotEqualTo(String value) {
-            addCriterion("buyer_nick <>", value, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickGreaterThan(String value) {
-            addCriterion("buyer_nick >", value, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickGreaterThanOrEqualTo(String value) {
-            addCriterion("buyer_nick >=", value, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickLessThan(String value) {
-            addCriterion("buyer_nick <", value, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickLessThanOrEqualTo(String value) {
-            addCriterion("buyer_nick <=", value, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickLike(String value) {
-            addCriterion("buyer_nick like", value, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickNotLike(String value) {
-            addCriterion("buyer_nick not like", value, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickIn(List<String> values) {
-            addCriterion("buyer_nick in", values, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickNotIn(List<String> values) {
-            addCriterion("buyer_nick not in", values, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickBetween(String value1, String value2) {
-            addCriterion("buyer_nick between", value1, value2, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerNickNotBetween(String value1, String value2) {
-            addCriterion("buyer_nick not between", value1, value2, "buyerNick");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateIsNull() {
-            addCriterion("buyer_rate is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateIsNotNull() {
-            addCriterion("buyer_rate is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateEqualTo(Integer value) {
-            addCriterion("buyer_rate =", value, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateNotEqualTo(Integer value) {
-            addCriterion("buyer_rate <>", value, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateGreaterThan(Integer value) {
-            addCriterion("buyer_rate >", value, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateGreaterThanOrEqualTo(Integer value) {
-            addCriterion("buyer_rate >=", value, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateLessThan(Integer value) {
-            addCriterion("buyer_rate <", value, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateLessThanOrEqualTo(Integer value) {
-            addCriterion("buyer_rate <=", value, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateIn(List<Integer> values) {
-            addCriterion("buyer_rate in", values, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateNotIn(List<Integer> values) {
-            addCriterion("buyer_rate not in", values, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateBetween(Integer value1, Integer value2) {
-            addCriterion("buyer_rate between", value1, value2, "buyerRate");
-            return (Criteria) this;
-        }
-
-        public Criteria andBuyerRateNotBetween(Integer value1, Integer value2) {
-            addCriterion("buyer_rate not between", value1, value2, "buyerRate");
+        public Criteria andShopIdNotBetween(Long value1, Long value2) {
+            addCriterion("shop_id not between", value1, value2, "shopId");
             return (Criteria) this;
         }
     }

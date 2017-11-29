@@ -36,7 +36,7 @@
         <!--注入会话工厂-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!--DAO层所在的包-->
-        <property name="basePackage" value="com.xsj.ddshop.dao"/>
+        <property name="basePackage" value="com.jdshop.dao"/>
     </bean>
     <!--5 扫描DAO层下注解类,可以扫描到base-package的当前包以及子包的所有注解类-->
     <context:component-scan base-package="com.jdshop.dao"/>

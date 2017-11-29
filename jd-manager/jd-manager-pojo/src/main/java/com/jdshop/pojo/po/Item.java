@@ -15,7 +15,7 @@ public class Item {
 
     private String barcode;
 
-    private String image;
+    private String pic;
 
     private Long cid;
 
@@ -75,12 +75,12 @@ public class Item {
         this.barcode = barcode == null ? null : barcode.trim();
     }
 
-    public String getImage() {
-        return image;
+    public String getPic() {
+        return pic;
     }
 
-    public void setImage(String image) {
-        this.image = image == null ? null : image.trim();
+    public void setPic(String pic) {
+        this.pic = pic == null ? null : pic.trim();
     }
 
     public Long getCid() {

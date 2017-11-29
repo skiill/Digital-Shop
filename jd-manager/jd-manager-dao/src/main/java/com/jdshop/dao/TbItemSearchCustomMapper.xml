@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.TbItemSearchCustomMapper" >
+
+  <select id="listSearchItems" resultType="com.jdshop.pojo.vo.TbItemSearchCustom">
+    SELECT
+    i.id,
+    i.title,
+    i.sell_point as sellPoint,
+    i.price,
+
+    c.name as catName
+    FROM
+   item i
+    LEFT JOIN item_cat c ON i.cid = c.id
+    WHERE
+    i.status = 1
+    order by i.id desc
+  </select>
+</mapper>

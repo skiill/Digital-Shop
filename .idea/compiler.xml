@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="jd-activemq" />
         <module name="jd-common" />
         <module name="jd-manager-dao" />
         <module name="jd-manager-interface" />
@@ -13,9 +14,12 @@
         <module name="jd-manager-service" />
         <module name="jd-manager-web" />
         <module name="jd-portal-web" />
+        <module name="jd-search-web" />
+        <module name="jd-sso-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="jd-activemq" target="1.7" />
       <module name="jd-common" target="1.7" />
       <module name="jd-manager" target="1.7" />
       <module name="jd-manager-dao" target="1.7" />
@@ -25,6 +29,8 @@
       <module name="jd-manager-web" target="1.7" />
       <module name="jd-parent" target="1.7" />
       <module name="jd-portal-web" target="1.7" />
+      <module name="jd-search-web" target="1.7" />
+      <module name="jd-sso-web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

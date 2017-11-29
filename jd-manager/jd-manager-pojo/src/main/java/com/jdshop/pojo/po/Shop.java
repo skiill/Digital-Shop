@@ -1,17 +1,25 @@
 package com.jdshop.pojo.po;
 
+import java.util.Date;
+
 public class Shop {
     private Long id;
 
     private String shopname;
 
+    private Long cid;
+
+    private String shopLogo;
+
     private Long userId;
 
-    private Integer grade;
+    private Integer credit;
 
     private Integer attention;
 
-    private String itemId;
+    private Date created;
+
+    private Date updated;
 
     public Long getId() {
         return id;
@@ -29,6 +37,22 @@ public class Shop {
         this.shopname = shopname == null ? null : shopname.trim();
     }
 
+    public Long getCid() {
+        return cid;
+    }
+
+    public void setCid(Long cid) {
+        this.cid = cid;
+    }
+
+    public String getShopLogo() {
+        return shopLogo;
+    }
+
+    public void setShopLogo(String shopLogo) {
+        this.shopLogo = shopLogo == null ? null : shopLogo.trim();
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -37,12 +61,12 @@ public class Shop {
         this.userId = userId;
     }
 
-    public Integer getGrade() {
-        return grade;
+    public Integer getCredit() {
+        return credit;
     }
 
-    public void setGrade(Integer grade) {
-        this.grade = grade;
+    public void setCredit(Integer credit) {
+        this.credit = credit;
     }
 
     public Integer getAttention() {
@@ -53,11 +77,19 @@ public class Shop {
         this.attention = attention;
     }
 
-    public String getItemId() {
-        return itemId;
+    public Date getCreated() {
+        return created;
     }
 
-    public void setItemId(String itemId) {
-        this.itemId = itemId == null ? null : itemId.trim();
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }
