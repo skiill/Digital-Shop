@@ -15,7 +15,7 @@ public class IndexAction {
 
     @RequestMapping("/")
     public String index(){
-        return "index-item";
+        return "index";
     }
     @RequestMapping("/jumpTo")
     public String jumptio(@RequestParam("name")String name){

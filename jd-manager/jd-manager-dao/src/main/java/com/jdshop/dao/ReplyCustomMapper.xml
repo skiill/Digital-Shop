@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.ReplyCustomMapper" >
+  <resultMap id="BaseResultMap" type="com.jdshop.pojo.po.Reply" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="parent_id" property="parentId" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="is_evaluate" property="isEvaluate" jdbcType="BIT" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="return_user_id" property="returnUserId" jdbcType="BIGINT" />
+    <result column="shipping_grade" property="shippingGrade" jdbcType="INTEGER" />
+    <result column="item_grade" property="itemGrade" jdbcType="INTEGER" />
+    <result column="shop_service_grade" property="shopServiceGrade" jdbcType="INTEGER" />
+    <result column="item_id" property="itemId" jdbcType="BIGINT" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="updated" property="updated" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.jdshop.pojo.po.Reply" extends="BaseResultMap" >
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  
+
+
+
+  <sql id="Base_Column_List" >
+    r.id, r.parent_id, r.status, r.is_evaluate, r.pic, r.user_id, r.return_user_id, r.shipping_grade,
+    r.item_grade, r.shop_service_grade,r.item_id, r.created, r.updated
+  </sql>
+  <sql id="Blob_Column_List" >
+    r.content
+  </sql>
+  <sql id="custom">
+    i.title,
+    i.pic AS itemPic
+  </sql>
+
+
+  <select id="getByUid" resultType="com.jdshop.pojo.vo.ReplyCustom" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,
+    <include refid="custom"/>
+    from
+    reply  r
+    LEFT  JOIN
+    item i
+    ON r.item_id=i.id
+    where r.user_id = #{uid}
+  </select>
+
+</mapper>

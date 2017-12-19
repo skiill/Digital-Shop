@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.NewCatMapper" >
+
+
+    <insert id="addCat" parameterType="com.jdshop.pojo.po.Cart" >
+       INSERT  INTO cart (id,user_id,item_id,shop_id,quantity,created,updated)
+       VALUES (#{id},#{userId},#{itemId},#{shopId},#{quantity},#{created},#{updated})
+    </insert>
+
+</mapper>

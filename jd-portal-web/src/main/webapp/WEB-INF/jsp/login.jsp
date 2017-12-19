@@ -22,9 +22,7 @@
     </script>
     <meta name="keywords" content="Kick flips Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndriodCompatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
     <!--Google Fonts-->
-    <link href='http://fonts.useso.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-    <!-- start-smoth-scrolling -->
+
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
     <script type="text/javascript">
@@ -41,7 +39,7 @@
 <!--banner start here-->
 <div class="banner-stripes">
 
-        <jsp:include page="head.jsp"/>
+
 </div>
 <!--banner end here-->
 <!--login start here-->
@@ -52,62 +50,21 @@
                 <h3>LOGIN</h3>
                 <img src="images/lock.png" alt=""/>
             </div>
+            <form action="login">
             <div class="login-bottom">
                 <p>USER NAME </p>
-                <input type="text" value=""  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
+                <input type="text" value=""  name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
                 <p>PASSWORD</p>
-                <input type="password" value="">
+                <input type="password" name="password" value="">
                 <input type="submit" value="LOGIN">
             </div>
+            </form>
             <div class="clearfix"> </div>
         </div>
     </div>
 </div>
 <!--login end here-->
 <!--footer start here-->
-<div class="footer">
-    <div class="container">
-        <div class="footer-main">
-            <div class="col-md-4 ftr-grid">
-                <h3>Featured product</h3>
-                <div class="ftr-glss">
-                    <div class="glss-text">
-                        <h3>Sunglasses VI</h3>
-                        <p>This is Photoshop's version  of Lorem Ipsum.</p>
-                        <div class="ftr-gls-bwn">
-                            <a href="#">View</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-5 ftr-grid">
-                <h3>Featured Article</h3>
-                <div class="ft-killbg">
-                    <h3>Killin,It</h3>
-                    <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis.</p>
-                    <div class="ftr-black-bwn">
-                        <a href="#">View Post</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 ftr-small-grid">
-                <span class="ftr-line"> </span>
-                <ul>
-                    <li><a href="jumpTo?name=magazine">Magazine</a></li>
-                    <li><a href="jumpTo?name=store">Store</a></li>
-                    <li><a href="jumpTo?name=newsletter">Newsletter</a></li>
-                    <li><a href="jumpTo?name=about">About</a><li>
-                    <li><a href="jumpTo?name=contact">Contact</a><li>
-                    <li><a href="jumpTo?name=press">Press</a><li>
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-            <div class="copyright">
-                <p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a> - Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></p>
-            </div>
-        </div>
-    </div>
-</div>
-<!--footer end here-->
+
 </body>
 </html>

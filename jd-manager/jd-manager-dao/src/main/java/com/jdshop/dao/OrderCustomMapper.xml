@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.OrderCustomMapper" >
+        <sql id="Base_Column_List">
+          order_id as orderId ,payment,payment_type as paymentType,status,create_time as createTime,payment_time as paymentTime,user_id as userId,buyer_nick as buyerNick
+        </sql>
+        <sql id="Where_Clause">
+                <where>
+                    status!=6
+                    <if test="op != null and op.createTime != null and op.createTime != '' ">
+                        and create_time =#{op.createTime}
+                    </if>
+                    <if test="op != null and op.status != null and op.status != 0 ">
+                        and status = #{op.status}
+                    </if>
+                </where>
+        </sql>
+  <select id="countItems" resultType="int">
+     select count(1)
+    from `order`
+     <include refid="Where_Clause"/>
+
+  </select>
+  <select id="listOrdersByPage" resultType="com.jdshop.pojo.po.Orders">
+        select <include refid="Base_Column_List" />
+      from `order`
+      <include refid="Where_Clause"/>
+           limit #{page.offset},#{page.limit}
+
+  </select>
+</mapper>

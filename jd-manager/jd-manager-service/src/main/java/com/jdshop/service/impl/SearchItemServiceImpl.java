@@ -1,5 +1,6 @@
 package com.jdshop.service.impl;
 
+
 import com.jdshop.dao.SearchItemDao;
 import com.jdshop.dao.TbItemSearchCustomMapper;
 import com.jdshop.pojo.vo.TbItemSearchCustom;
@@ -61,7 +62,7 @@ public class SearchItemServiceImpl implements SearchItemService {
         return true;
     }
     @Override
-    public TbSearchItemResult search(String keyword, Integer page, int rows) {
+    public TbSearchItemResult search(String keyword, Integer page, int rows) throws Exception {
         //创建一个SolrQuery对象
         SolrQuery query = new SolrQuery();
         //设置查询条件

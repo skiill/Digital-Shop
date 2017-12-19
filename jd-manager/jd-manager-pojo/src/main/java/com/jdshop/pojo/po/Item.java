@@ -122,4 +122,22 @@ public class Item {
     public void setAttention(Integer attention) {
         this.attention = attention;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", sellPoint='" + sellPoint + '\'' +
+                ", price=" + price +
+                ", num=" + num +
+                ", barcode='" + barcode + '\'' +
+                ", pic='" + pic + '\'' +
+                ", cid=" + cid +
+                ", status=" + status +
+                ", created=" + created +
+                ", updated=" + updated +
+                ", attention=" + attention +
+                '}';
+    }
 }

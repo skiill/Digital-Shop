@@ -10,7 +10,7 @@ font-family: 'Roboto', sans-serif;
 }
 /*--banner start here--*/
 .banner {
-	/*background: url(../images/banner.jpg)no-repeat;*/
+	background: url(../images/)no-repeat;
 	min-height: 600px;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -435,13 +435,13 @@ ul.bann-list li {
 	padding: 50px 0px;
 }
 .glass {
-	background: url(../images/VIP01.jpg)no-repeat;
+	background: url(../images/iphone.jpg)no-repeat;
 	width: 284px;
 	height: 332px;
 	display: block;
 }
 .cam {
-	background: url(../images/iphone.jpg)no-repeat;
+	background: url(../images/VIP01.jpg)no-repeat;
 	width: 284px;
 	height: 332px;
 	display: block;
@@ -452,38 +452,38 @@ ul.bann-list li {
 	height: 332px;
 	display: block;
 }
-.cam1 {
+.glass1 {
 	background: url(../images/camera01.jpg)no-repeat;
 	width: 284px;
 	height: 332px;
 	display: block;
 }
-.cam2 {
-	background: url(../images/camera04.jpg)no-repeat;
-	width: 284px;
-	height: 332px;
-	display: block;
-}
-.cam3 {
+.cam1 {
 	background: url(../images/cam.png)no-repeat;
 	width: 284px;
 	height: 332px;
 	display: block;
 }
-.wat1 {
-	background: url(../images/watch01casio.jpg)no-repeat;
+.clk1 {
+	background: url(../images/camera04.jpg)no-repeat;
 	width: 284px;
 	height: 332px;
 	display: block;
 }
-.wat2 {
-	background: url(../images/watch02.jpg)no-repeat;
+.glass2 {
+	background: url(../images/mac01.jpg)no-repeat;
 	width: 284px;
 	height: 332px;
 	display: block;
 }
-.wat3 {
-	background: url(../images/clk.png)no-repeat;
+.cam2 {
+	background: url(../images/mac02.jpg)no-repeat;
+	width: 284px;
+	height: 332px;
+	display: block;
+}
+.clk2 {
+	background: url(../images/mac03.jpg)no-repeat;
 	width: 284px;
 	height: 332px;
 	display: block;

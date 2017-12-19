@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.CartItemMapper" >
+
+
+
+
+  <select id="getCart" resultType="com.jdshop.pojo.vo.CartItem">
+    SELECT
+   c.id, c.user_id AS userId,c.item_id AS itemId,c.shop_id AS shopId, s.shopname AS shopName,i.title,i.sell_point AS sellPoint,i.price,i.pic,c.quantity,c.created,c.updated
+    FROM cart c
+    LEFT JOIN item i ON i.id=c.item_id
+    LEFT JOIN shop s ON s.id=c.shop_id
+    WHERE c.user_id=#{userid}
+  </select>
+
+
+
+    <select id="getCartByCid" resultType="com.jdshop.pojo.vo.CartItem">
+        SELECT
+        c.id, c.user_id AS userId,c.item_id AS itemId,c.shop_id AS shopId, s.shopname AS shopName,i.title,i.sell_point AS sellPoint,i.price,i.pic,c.quantity,c.created,c.updated
+        FROM cart c
+        LEFT JOIN item i ON i.id=c.item_id
+        LEFT JOIN shop s ON s.id=c.shop_id
+        WHERE c.id=#{cid}
+    </select>
+
+
+    <update id="modifyQuantity" parameterType="map" >
+        UPDATE cart c
+        SET c.quantity=#{quantity}
+        WHERE c.id=#{id}
+    </update>
+
+    <delete id="deleteCartItem" parameterType="long">
+      DELETE FROM cart
+      WHERE id=#{id}
+    </delete>
+</mapper>

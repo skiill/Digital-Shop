@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.Item2Mapper" >
+
+  <sql id="Base_Column_List1" >
+    id, title, sell_point as sellPoint, price,
+    num, barcode, pic, cid, status, created, updated
+  </sql>
+
+
+  <!-- 查找每页的记录 -->
+  <select id="selectById" resultType="com.jdshop.pojo.po.Item" >
+    select 
+     <include refid="Base_Column_List1"/>
+     from item  where id =#{id}
+  </select>
+    <select id="selectitemdec" resultType="com.jdshop.pojo.po.ItemDesc" >
+        select
+        item_id as itemid,created, updated,item_Desc as itemDesc
+        from item_desc  where item_id =#{id}
+    </select>
+
+</mapper>

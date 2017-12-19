@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.AddAttentionMapper" >
+    <sql id="Base_Column_List2" >
+        id,username,password, phone,email,created,updated,status,realname,id_number as idNumber,
+pay_password as payPassword,receiver_address as receiverAddress,item_attention as itemAttention,
+shop_attention as shopAttention
+    </sql>
+
+
+    <select id="selectUserItemAttention" resultType="com.jdshop.pojo.po.UserWithBLOBs" >
+        select
+        <include refid="Base_Column_List2"/>
+        from user  where  id=#{id}
+    </select>
+
+    <update id="AddUserItemAttention" parameterType="com.jdshop.pojo.po.UserWithBLOBs" >
+     UPDATE user SET item_attention = #{itemAttention} WHERE id=#{id}
+    </update>
+
+    <select id="selectUserShopAttention" resultType="com.jdshop.pojo.po.UserWithBLOBs" >
+        select
+        <include refid="Base_Column_List2"/>
+        from user  where  id=#{id}
+    </select>
+
+    <update id="AddUserShopAttention" parameterType="com.jdshop.pojo.po.UserWithBLOBs" >
+        UPDATE user SET shop_attention = #{shopAttention} WHERE id=#{id}
+    </update>
+
+</mapper>

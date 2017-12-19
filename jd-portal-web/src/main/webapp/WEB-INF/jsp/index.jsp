@@ -50,39 +50,7 @@
 </head>
 <body>
 <!--banner start here-->
-<div class="banner">
-    <div class="banner-stripes">
-        <div class="banner-strip-lft">
-            <div class="container">
-                <div class="bann-head">
-                    <a href="jumpTo?name=index"><img src="images/logo.png" alt=""/></a>
-                    <ul  class="bann-list">
-                        <li><a href="jumpTo?name=store">手机</a></li>
-                        <li><a href="jumpTo?name=magazine">电脑</a></li>
-                        <li><a href="jumpTo?name=magazine">相机</a></li>
-                        <li><a href="jumpTo?name=magazine">更多</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="banner-strip-rit">
-            <div class="bann-contact">
-                <div class="search">
-                    <input type="text" value="" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}"/>
-                    <input type="submit" value=""/>
-                </div>
-                <ul>
-                    <li ><a href="jumpTo?name=signup">注册</a></li>
-                    <li ><a href="login">登录</a></li>
-                    <li ><a href="jumpTo?name=signup">个人中心</a></li>
-                    <li ><a href="jumpTo?name=login">购物车</a></li>
-                    <li ><a href="jumpTo?name=signup">收藏夹</a></li>
-
-                </ul>
-            </div>
-
-        </div>
-        <div class="clearfix"> </div>
+<jsp:include page="head.jsp"/>
         <!-- 轮播广告 -->
         <div id="banner_tabs" class="flexslider">
             <ul class="slides" >
@@ -137,20 +105,26 @@
     <div class="container">
         <div class="store-main">
             <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
+                <a href="itemaction?id=1">
                 <div class="glass">
 
                 </div>
+                </a>
             </div>
             <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
+                <a href="itemaction?id=2">
                 <div class="cam">
 
                     </div>
+                </a>
                 </div>
             </div>
             <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
+                <a href="itemaction?id=3">
                 <div class="clk">
 
                     </div>
+                </a>
                 </div>
             </div>
         </div>
@@ -170,19 +144,25 @@
     <div class="container">
         <div class="store-main">
             <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
+                <a href="itemaction?id=4">
+                    <div class="glass1">
+
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
+                <a href="itemaction?id=5">
                 <div class="cam1">
 
                 </div>
+                </a>
             </div>
             <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
-                <div class="cam2">
+                <a href="itemaction?id=6">
+                <div class="clk1">
 
                 </div>
-            </div>
-            <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
-                <div class="cam3">
-
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -201,19 +181,25 @@
     <div class="container">
         <div class="store-main">
             <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
-                <div class="wat1">
+                <a href="itemaction?id=7">
+                <div class="glass2">
 
                 </div>
+                </a>
             </div>
             <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
-                <div class="wat2">
+                <a href="itemaction?id=8">
+                <div class="cam2">
 
                 </div>
+                </a>
             </div>
             <div class="col-md-4 store-grid  wow bounceIn" data-wow-delay="0.4s">
-                <div class="wat3">
+                <a href="itemaction?id=9">
+                <div class="clk2">
 
                 </div>
+                </a>
             </div>
         </div>
     </div>

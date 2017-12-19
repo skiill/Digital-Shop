@@ -83,7 +83,7 @@
       <include refid="Example_Where_Clause" />
     </if>
     <if test="orderByClause != null" >
-      order by ${orderByClause}
+      orders by ${orderByClause}
     </if>
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >

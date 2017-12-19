@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jdshop.dao.ShopCustomMapper" >
+        <sql id="Base_Column_List">
+         id ,shopname,user_id as userId,item_id as itemId ,grade,attention
+        </sql>
+    <sql id="Where_Clause">
+        <where>
+            <if test="sp != null and sp.userId != null and sp.userId != '' ">
+                and user_Id = #{sp.userId}
+            </if>
+        </where>
+    </sql>
+  <select id="countItems" resultType="int">
+     select count(1)
+    from shop
+      <include refid="Where_Clause" />
+  </select>
+  <select id="listShopByPage" resultType="com.jdshop.pojo.po.Shop">
+        select <include refid="Base_Column_List" />
+      from shop
+      <include refid="Where_Clause" />
+           limit #{page.offset},#{page.limit}
+
+  </select>
+</mapper>
